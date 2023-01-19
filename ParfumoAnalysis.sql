@@ -1279,7 +1279,7 @@ SELECT fraghouse AS brand, COUNT(fraghouse)
 FROM parfumosql 
 GROUP BY fraghouse
 ORDER BY COUNT(fraghouse) DESC
-LIMIT 5;
+LIMIT 10;
 
 /* Results: Guerlain(43), Chanel(23), Roja(19), Dior(16), XerJoff(15) */
 
@@ -1307,9 +1307,9 @@ LIMIT 5;
 
 /* Results: Roja Dove(19), Jacques Polge(15), Jacques Guerlain(12), Thierry Wasser(12) J.P Guerlain(10) */
 
-/* Next, a simple inner join to see both the fragrance, house, and pefumer */
+/* Next, a simple inner join to see both the fragrance, house, and perfumer */
 
-SELECT fragrance, fraghouse AS brand, perfumers.perfumer
+SELECT fragrance, fraghouse AS brand, perfumers.perfumer, rating
 FROM parfumosql
 INNER JOIN perfumers
 ON parfumosql."ID" = perfumers."id";
